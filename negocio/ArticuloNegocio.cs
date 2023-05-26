@@ -11,6 +11,51 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
+
+        public List<Articulo> listarConSp()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                //string consulta = "Select Articulos.Id,Articulos.Codigo,Articulos.Nombre,Articulos.Descripcion,Articulos.Precio,Marcas.Descripcion as Marca,Categorias.Descripcion as Categoria,Imagenes.ImagenUrl,Articulos.IdMarca,Articulos.IdCategoria From Articulos\r\ninner join Marcas on Marcas.Id = Articulos.IdMarca\r\ninner join Categorias on Categorias.Id = Articulos.IdCategoria\r\ninner join Imagenes on Imagenes.IdArticulo = Articulos.Id Where Articulos.idMarca > 0";
+                //datos.setearConsulta(consulta);
+
+                datos.setearProcedimiento("SP_Listar");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.Imagen = new Imagen();
+                        aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        
+    }
+
+
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -276,4 +321,6 @@ namespace negocio
         }
 
     }
+
+
 }
