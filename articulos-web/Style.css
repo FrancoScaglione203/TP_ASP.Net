@@ -37,9 +37,28 @@
 
 /*NAVBAR*/
 
+nav a {
+    color: white !important;
+}
+
 .navbar-brand img {
     max-height: 4rem;
     height: 4rem;
+}
+
+/*FOOTER*/
+
+footer h6 {
+    font-weight:600;
+}
+
+footer .fa {
+    color: var(--azul) !important;
+    font-size: 1.5rem;
+}
+
+footer .fa:hover {
+    color: var(--azul-hover) !important;
 }
 
 /*SECCION DETALLES*/
