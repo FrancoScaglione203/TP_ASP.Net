@@ -9,15 +9,18 @@
     color: var(--azul) !important;
 }
 
-.bg-primary {
+.bg-blue {
     background-color: var(--azul) !important;
 }
 
 /*GENERAL*/
 
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 *,.container-fluid {
     margin: 0;
     padding: 0;
+    font-family: 'Muli', sans-serif;
 }
 
 /*BOTONES*/
@@ -32,8 +35,14 @@
     border: 1px solid var(--azul-hover) !important;
 }
 
-/*SECCION DETALLES*/
+/*NAVBAR*/
 
+.navbar-brand img {
+    max-height: 4rem;
+    height: 4rem;
+}
+
+/*SECCION DETALLES*/
 .detail-img-container-mini {
     max-height: 15vh;
     height: 15vh;
