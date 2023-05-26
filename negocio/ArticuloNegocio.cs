@@ -23,6 +23,7 @@ namespace negocio
 
                 datos.setearProcedimiento("SP_Listar");
                 datos.ejecutarLectura();
+
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();

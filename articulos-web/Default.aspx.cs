@@ -18,4 +18,4 @@ namespace articulos_web
             ListaArticulos = articuloNegocio.listarConSp();
         }
     }
-}       
+}   
