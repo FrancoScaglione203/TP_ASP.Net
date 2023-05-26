@@ -1,0 +1,58 @@
+﻿/*COLORES*/
+:root {
+    --azul: #2e68a6;
+    --azul-hover: #4582c4;
+    --white: #ffffff;
+}
+
+.texto-azul {
+    color: var(--azul) !important;
+}
+
+.bg-primary {
+    background-color: var(--azul) !important;
+}
+
+/*GENERAL*/
+
+*,.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+/*BOTONES*/
+
+.btn-primary {
+    background-color: var(--azul) !important;
+    border: 1px solid var(--azul) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-hover) !important;
+    border: 1px solid var(--azul-hover) !important;
+}
+
+/*SECCION DETALLES*/
+
+.detail-img-container-mini {
+    max-height: 15vh;
+    height: 15vh;
+}
+
+.detail-img-container {
+    max-height: 60vh;
+    height: 60vh;
+}
+
+.detail-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.detail-info-container * {
+    max-width:25vw;
+    margin: 1rem 0;
+}
+
+
+
