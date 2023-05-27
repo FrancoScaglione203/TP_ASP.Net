@@ -13,13 +13,14 @@
             <div class="card mb-3 " style="max-width: 1040px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                        <img src="<%#Eval("Imagen") %>" class="img-fluid rounded-start" alt="..." style="max-height: 150px">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title"> <%#Eval("Nombre") %></h5>
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <p class="card-text"><small class="text-body-secondary">$<%#Eval("Precio") %></small></p>
+                            <asp:Button class="btn btn-primary w-25" ID="AddCart" runat="server" Text="Eliminar" /> 
                         </div>
                     </div>
                 </div>
