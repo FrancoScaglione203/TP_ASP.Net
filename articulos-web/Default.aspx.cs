@@ -15,7 +15,8 @@ namespace articulos_web
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            ListaArticulos = articuloNegocio.listarConSp();
+            ListaArticulos = articuloNegocio.listar();
+           // ListaArticulos = articuloNegocio.listarConSp();
         }
     }
 }   

@@ -11,7 +11,16 @@ namespace articulos_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Request.QueryString["id"]!=null)
+                {
 
+                }
+            }
+            catch (Exception) {
+                throw;
+            }
         }
     }
 }
