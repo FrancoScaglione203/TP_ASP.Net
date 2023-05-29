@@ -20,7 +20,7 @@
                             <h5 class="card-title"> <%#Eval("Nombre") %></h5>
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <p class="card-text"><small class="text-body-secondary">$<%#Eval("Precio") %></small></p>
-                            <asp:Button class="btn btn-primary w-25" ID="AddCart" runat="server" Text="Eliminar" /> 
+                            <asp:Button Text="Eliminar" class="btn btn-primary w-25" runat="server" id="EliminarCarrito" CommandArgument='<%#Eval("Id") %>' CommandName="ArticuloId" onClick="EliminarCarrito_Click"/> 
                         </div>
                     </div>
                 </div>

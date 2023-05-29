@@ -16,8 +16,24 @@ namespace articulos_web
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             artsCarrito = negocio.listarConSp();
-            repRepetidor.DataSource = artsCarrito;
-            repRepetidor.DataBind();
+
+            if (!IsPostBack)
+            {
+                repRepetidor.DataSource = artsCarrito;
+                repRepetidor.DataBind();
+            }
+        }
+
+        protected void EliminarCarrito_Click(object sender, EventArgs e)
+        {
+            int idEliminar = int.Parse(((Button)sender).CommandArgument);
         }
     }
 }
+
+
+
+
+
+
+
