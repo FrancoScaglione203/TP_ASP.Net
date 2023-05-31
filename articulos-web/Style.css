@@ -46,6 +46,24 @@ nav a {
     height: 4rem;
 }
 
+/* SECCION HOME */
+
+
+
+home .sidebar {
+    background-color: #f8f9fa !important;
+    padding: 20px !important;
+}
+
+home .product-list {
+    padding: 20px !important;
+}
+
+home .card{
+    margin: 20px;
+    
+}
+
 /*FOOTER*/
 
 footer h6 {
@@ -60,6 +78,9 @@ footer .fa {
 footer .fa:hover {
     color: var(--azul-hover) !important;
 }
+
+
+
 
 /*SECCION DETALLES*/
 .detail-img-container-mini {
