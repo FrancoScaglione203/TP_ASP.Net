@@ -14,6 +14,7 @@
                             <li>Filtro 1</li>
                             <li>Filtro 2</li>
                             <li>Filtro 3</li>
+
                         </ul>
                     </div>
                 </div>
@@ -32,7 +33,7 @@
                                         <img class="card-img-top" src="<%:articulo.Imagen.ImagenUrl %>" alt="<%: articulo.Nombre %>"></a>
                                     <div class="card-body">
                                         <h5 class="card-title"><%: articulo.Nombre %></h5>
-                                        <p class="card-text"><%: articulo.Precio %></p>
+                                        <p class="card-text precio">$<%: articulo.Precio %></p>
                                     </div>
                                 </div>
                             </div>

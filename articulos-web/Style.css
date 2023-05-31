@@ -33,6 +33,7 @@
 .btn-primary:hover {
     background-color: var(--azul-hover) !important;
     border: 1px solid var(--azul-hover) !important;
+
 }
 
 /*NAVBAR*/
@@ -50,18 +51,44 @@ nav a {
 
 
 
-home .sidebar {
+main.home .sidebar {
     background-color: #f8f9fa !important;
     padding: 20px !important;
 }
 
-home .product-list {
+main.home .product-list {
     padding: 20px !important;
 }
 
-home .card{
-    margin: 20px;
-    
+main.home .card {
+    margin: 20px !important;
+    background-color: #f8f9fa !important;
+}
+
+main.home .card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2) !important;
+}
+
+main.home .card-body {
+    margin-bottom: 10px !important;
+    background-color: white !important;
+    border-top: 1px solid #ebebeb !important;
+    padding: 15px !important;
+}
+
+main.home img.card-top {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+main.home p.precio {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    width: 100% !important;
 }
 
 /*FOOTER*/
@@ -103,5 +130,8 @@ footer .fa:hover {
     margin: 1rem 0;
 }
 
-
-
+@media screen and (min-width:768) and (max-width: 992px) {
+    main.home p.precio {
+        font-size: 0.8rem !important;
+    }
+}
