@@ -29,9 +29,9 @@
                           </li>
                           <li class="list-group-item">
                                 <asp:TextBox ID="txtPrecioMax" runat="server" CssClass="form-control" placeholder="Precio maximo"></asp:TextBox>
-                          </li>
-                            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" />
-                           <%-- <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-primary" OnClick="btnLimpiar_Click" />--%>
+                          </li >
+                            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" style="margin: 10px;"/>
+                            <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-primary" OnClick="btnLimpiar_Click" style="margin: 10px;" />
                         </ul>
                     </div>
                 </div>

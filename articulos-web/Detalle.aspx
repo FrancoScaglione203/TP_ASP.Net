@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-1">
             <div class="my-5 detail-info-container">
-                <h2>Iphone 11</h2>
+                <h2><%:articulo.Nombre %></h2>
                 <h4>$349.899</h4>
                 <h5 class="texto-azul">Marca:</h5>
                 <p>Apple</p>

@@ -91,6 +91,11 @@ main.home p.precio {
     width: 100% !important;
 }
 
+main.home .boton{
+    width: 100% !important;
+    margin-bottom: 10px !important;
+}
+
 /*FOOTER*/
 
 footer h6 {

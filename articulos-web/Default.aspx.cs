@@ -74,5 +74,18 @@ namespace articulos_web
             }
 
         }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar filtros
+            rblMarcas.SelectedIndex = -1;
+            rblCategorias.SelectedIndex = -1;
+            txtNombre.Text = "";
+            txtPrecioMin.Text = "";
+            txtPrecioMax.Text = "";
+            // Limpiar lista de articulos
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            ListaArticulos = articuloNegocio.listar();
+        }
     }
 }
