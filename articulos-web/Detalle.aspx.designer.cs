@@ -15,15 +15,6 @@ namespace articulos_web
     {
 
         /// <summary>
-        /// Control ImagenMini1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagenMini1;
-
-        /// <summary>
         /// Control ImagenMini2.
         /// </summary>
         /// <remarks>
@@ -40,23 +31,5 @@ namespace articulos_web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImagenMini3;
-
-        /// <summary>
-        /// Control ImagenDetalle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagenDetalle;
-
-        /// <summary>
-        /// Control AddCart.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddCart;
     }
 }
