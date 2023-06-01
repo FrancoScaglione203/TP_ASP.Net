@@ -37,7 +37,6 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-lg-auto">
                         <a class="nav-item nav-link" href="Default.aspx" aria-current="page">Home</a>
-                        <a class="nav-item nav-link" href="Detalle.aspx">Detalle</a>
                         <a class="nav-item nav-link" href="#">Locales</a>
                         <a class="nav-item nav-link" href="#">Nosotros</a>
                     </div>
