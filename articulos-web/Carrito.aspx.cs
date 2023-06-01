@@ -11,29 +11,35 @@ namespace articulos_web
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        public List<Articulo> artsCarrito { get; set; } 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            artsCarrito = negocio.listarConSp();
+        public List<Articulo> artsCarrito { get; set; }
 
+
+        public Carrito()
+        {
+            if (artsCarrito != null)
+            {
+                artsCarrito = new List<Articulo>(); // Inicializa la lista en el constructor
+            }
+        }
+
+        public void Page_Load(object sender, EventArgs e)
+        {
             if (!IsPostBack)
             {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                List<Articulo> listaArticulos = negocio.listarConSp();
+                artsCarrito = new List<Articulo>(listaArticulos);
                 repRepetidor.DataSource = artsCarrito;
                 repRepetidor.DataBind();
             }
         }
 
-        protected void EliminarCarrito_Click(object sender, EventArgs e)
+        public void EliminarCarrito_Click(object sender, EventArgs e)
         {
             int idEliminar = int.Parse(((Button)sender).CommandArgument);
+            artsCarrito.RemoveAll(articulo => articulo.Id == idEliminar);
+            repRepetidor.DataSource = artsCarrito;
+            repRepetidor.DataBind();
         }
     }
 }
-
-
-
-
-
-
-

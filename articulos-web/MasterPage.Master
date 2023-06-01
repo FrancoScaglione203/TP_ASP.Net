@@ -16,7 +16,7 @@
 <body>
     <form id="form1" runat="server">
 
-      <!-- Header -->
+        <!-- Header -->
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-10 navbar-brand">
@@ -43,16 +43,17 @@
                     </div>
                     <div class="navbar-nav ms-lg-4">
                         <a class="nav-item nav-link" href="Carrito.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-user px-1"></i>Clara Visconti</a>
+                        <a class="nav-item nav-link" href="Usuario.aspx">
+                            <asp:Label ID="lblLogueo" runat="server" CssClass="fa-solid fa-user px-1"></asp:Label></a>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
         <!-- Main -->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
-       
+
         <!-- Footer -->
         <footer class="bg-light">
             <div class="container py-4">
@@ -78,7 +79,7 @@
                     <div class="col-lg-3 col-md-6 mb-lg-0">
                         <h6 class="mb-4">Nuestras Redes</h6>
                         <p class=" mb-4">¡Síguenos en redes y descubre la mejor tecnología en nuestra tienda!.</p>
-                       <ul class="list-inline mt-4">
+                        <ul class="list-inline mt-4">
                             <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
                             <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
@@ -93,6 +94,7 @@
                     <p class="text-white mb-0 py-2">© 2023 Amazon Todos los derechos reservados.</p>
                 </div>
             </div>
+
         </footer>
     </form>
 </body>
