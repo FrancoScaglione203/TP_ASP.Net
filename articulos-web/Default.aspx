@@ -8,13 +8,30 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="sidebar">
-                        <!-- Aquí van tus filtros -->
-                        <h5>Filtros</h5>
-                        <ul>
-                            <li>Filtro 1</li>
-                            <li>Filtro 2</li>
-                            <li>Filtro 3</li>
+                        
 
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                        <h3>Filtrar por marca</h3>
+                            <asp:RadioButtonList ID="rblMarcas" runat="server"></asp:RadioButtonList>
+                          </li>
+                          <li class="list-group-item">
+                            <h3>Filtrar por categoria</h3>
+                            <asp:RadioButtonList ID="rblCategorias" runat="server"></asp:RadioButtonList>
+                          </li>
+                          <li class="list-group-item">
+                                <h3>Filtrar por nombre</h3>
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Nombre"></asp:TextBox>
+                          </li>
+                          <li class="list-group-item">
+                              <h3>Filtrar por Precio</h3>
+                              <asp:TextBox ID="txtPrecioMin" runat="server" CssClass="form-control" placeholder="Precio minimo"></asp:TextBox>
+                          </li>
+                          <li class="list-group-item">
+                                <asp:TextBox ID="txtPrecioMax" runat="server" CssClass="form-control" placeholder="Precio maximo"></asp:TextBox>
+                          </li>
+                            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" />
+                           <%-- <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-primary" OnClick="btnLimpiar_Click" />--%>
                         </ul>
                     </div>
                 </div>
@@ -22,7 +39,6 @@
                     <div class="product-list">
                         <div class="row">
                             <%
-
                                 foreach (dominio.Articulo articulo in ListaArticulos)
                                 {
                             %>
@@ -32,6 +48,7 @@
                                     <a href="Detalle.aspx?id=<%: articulo.Id %>">
                                         <img class="card-img-top" src="<%:articulo.Imagen.ImagenUrl %>" alt="<%: articulo.Nombre %>"></a>
                                     <div class="card-body">
+                                        <h5 class="card-title"><%: articulo.Marca.Descripcion %></h5>
                                         <h5 class="card-title"><%: articulo.Nombre %></h5>
                                         <p class="card-text precio">$<%: articulo.Precio %></p>
                                     </div>
