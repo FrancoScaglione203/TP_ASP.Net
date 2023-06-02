@@ -63,7 +63,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Select Articulos.Id,Articulos.Codigo,Articulos.Nombre,Articulos.Descripcion,Articulos.Precio,Marcas.Descripcion as Marca,Categorias.Descripcion as Categoria,Imagenes.ImagenUrl,Articulos.IdMarca,Articulos.IdCategoria From Articulos\r\ninner join Marcas on Marcas.Id = Articulos.IdMarca\r\ninner join Categorias on Categorias.Id = Articulos.IdCategoria\r\ninner join Imagenes on Imagenes.IdArticulo = Articulos.Id Where Articulos.idMarca > 0");
+                //datos.setearConsulta("Select Articulos.Id,Articulos.Codigo,Articulos.Nombre,Articulos.Descripcion,Articulos.Precio,Marcas.Descripcion as Marca,Categorias.Descripcion as Categoria,Imagenes.ImagenUrl,Articulos.IdMarca,Articulos.IdCategoria From Articulos\r\ninner join Marcas on Marcas.Id = Articulos.IdMarca\r\nleft join Categorias on Categorias.Id = Articulos.IdCategoria\r\ninner join Imagenes on Imagenes.IdArticulo = Articulos.Id Where Articulos.idMarca > 0");
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion AS Marca, C.Descripcion AS Categoria, MIN(I.ImagenUrl) AS ImagenUrl, A.IdMarca, A.IdCategoria\r\nFROM Articulos AS A\r\nINNER JOIN Marcas AS M ON M.Id = A.IdMarca\r\nLEFT JOIN Categorias AS C ON C.Id = A.IdCategoria\r\nINNER JOIN Imagenes AS I ON I.IdArticulo = A.Id\r\nWHERE A.IdMarca > 0\r\nGROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Descripcion, C.Descripcion, A.IdMarca, A.IdCategoria");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -79,14 +80,60 @@ namespace negocio
                     aux.Marca.Id= (int)datos.Lector["IdMarca"];
                     aux.Marca.Descripcion= (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
+                    if(!(datos.Lector["Categoria"] is DBNull))
+                        {
+                            aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                        }
+                        else
+                        {
+                            aux.Categoria.Descripcion = "Sin Categoria";
+                        }
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    //aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
                      if (!(datos.Lector["ImagenUrl"] is DBNull))
                      {
                         aux.Imagen = new Imagen();
                         aux.Imagen.ImagenUrl= (string)datos.Lector["ImagenUrl"];
                      }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public List<Imagen> listarImagen()
+        {
+            List<Imagen> lista = new List<Imagen>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select I.Id,I.IdArticulo,I.ImagenUrl from imagenes as I");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Imagen aux = new Imagen();
+                    try
+                    {
+                        aux.Id = (int)datos.Lector["Id"];
+                        aux.IdArticulo = (int)datos.Lector["IdArticulo"];
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     }
                     catch (Exception ex)
                     {

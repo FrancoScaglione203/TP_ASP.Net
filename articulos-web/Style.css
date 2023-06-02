@@ -33,6 +33,7 @@
 .btn-primary:hover {
     background-color: var(--azul-hover) !important;
     border: 1px solid var(--azul-hover) !important;
+
 }
 
 /*NAVBAR*/
@@ -44,6 +45,55 @@ nav a {
 .navbar-brand img {
     max-height: 4rem;
     height: 4rem;
+}
+
+/* SECCION HOME */
+
+
+
+main.home .sidebar {
+    background-color: #f8f9fa !important;
+    padding: 20px !important;
+}
+
+main.home .product-list {
+    padding: 20px !important;
+}
+
+main.home .card {
+    margin: 20px !important;
+    background-color: #f8f9fa !important;
+}
+
+main.home .card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2) !important;
+}
+
+main.home .card-body {
+    margin-bottom: 10px !important;
+    background-color: white !important;
+    border-top: 1px solid #ebebeb !important;
+    padding: 15px !important;
+}
+
+main.home img.card-top {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+main.home p.precio {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    width: 100% !important;
+}
+
+main.home .boton{
+    width: 100% !important;
+    margin-bottom: 10px !important;
 }
 
 /*FOOTER*/
@@ -60,6 +110,9 @@ footer .fa {
 footer .fa:hover {
     color: var(--azul-hover) !important;
 }
+
+
+
 
 /*SECCION DETALLES*/
 .detail-img-container-mini {
@@ -89,3 +142,8 @@ footer .fa:hover {
 
 /*CARRITO*/
 
+@media screen and (min-width:768px) and (max-width: 992px) {
+    main.home p.precio {
+        font-size: 0.8rem !important;
+    }
+}
