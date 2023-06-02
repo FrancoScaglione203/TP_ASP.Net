@@ -28,7 +28,7 @@
                 <p>Apple</p>
                 <h5 class="texto-azul">Descripción:</h5>
                 <p>Graba videos 4K y captura retratos espectaculares y paisajes increíbles con el sistema de dos cámaras. Toma grandes fotos con poca luz gracias al modo Noche. Disfruta colores reales en las fotos, videos y juegos con la pantalla Liquid Retina de 6.1 pulgadas</p>
-                <asp:Button class="btn btn-primary w-100" ID="AddCart" runat="server" Text="Añadir al carrito" />
+                <asp:Button class="btn btn-primary w-100" ID="AddCart" runat="server" Text="Añadir al carrito" OnClick="AddCart_Click" />
             </div>
         </div>
         <div>

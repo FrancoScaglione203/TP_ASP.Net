@@ -6,40 +6,65 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using negocio;
 using dominio;
+using System.Collections;
 
 namespace articulos_web
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        public List<Articulo> artsCarrito { get; set; }
-
-
-        public Carrito()
-        {
-            if (artsCarrito != null)
-            {
-                artsCarrito = new List<Articulo>(); // Inicializa la lista en el constructor
-            }
-        }
-
         public void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                List<Articulo> listaArticulos = negocio.listarConSp();
-                artsCarrito = new List<Articulo>(listaArticulos);
-                repRepetidor.DataSource = artsCarrito;
-                repRepetidor.DataBind();
-            }
+
         }
+
+        public void AgregarCarrito(int Id) 
+        {
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = Session["Carrito"] as List<Articulo>;
+
+            int id = Convert.ToInt32(Session["Id"]);
+            Articulo articuloNuevo = new Articulo();
+            articuloNuevo = seleccionArticulo(id);
+
+            carrito.Add(articuloNuevo);
+
+            Session["Carrito"] = carrito;
+
+
+            repRepetidor.DataSource = Session["Carrito"] as List<Articulo>;
+            repRepetidor.DataBind();
+
+        }
+
+
+        public Articulo seleccionArticulo (int id)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> listaArticulos = negocio.listarConSp();
+        
+            foreach (var art in listaArticulos)
+            {
+                if (art.Id == id)
+                {
+                    return art;
+                }
+            }
+            return null;
+        }
+
+
+
 
         public void EliminarCarrito_Click(object sender, EventArgs e)
         {
-            int idEliminar = int.Parse(((Button)sender).CommandArgument);
-            artsCarrito.RemoveAll(articulo => articulo.Id == idEliminar);
-            repRepetidor.DataSource = artsCarrito;
-            repRepetidor.DataBind();
+
+
+
+
+
+            //int idEliminar = int.Parse(((Button)sender).CommandArgument);
+            //artsCarrito.RemoveAll(articulo => articulo.Id == idEliminar);
+
         }
     }
 }

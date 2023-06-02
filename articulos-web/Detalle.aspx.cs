@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,17 @@ namespace articulos_web
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void AddCart_Click(object sender, EventArgs e)
+        {
+            int Id = 4;
+            Session["Id"] = Id;
+            if (Session["Carrito"] == null)
+            {
+                List<Articulo> carrito = new List<Articulo>();
+                Session["Carrito"] = carrito;
+            }
         }
     }
 }
