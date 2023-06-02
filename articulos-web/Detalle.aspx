@@ -5,19 +5,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row my-5 justify-content-center">
         <div class="col-lg-1 col-md-1 col-sm-1 text-center">
+            <%
+                foreach (dominio.Imagen imagen in listaImagenes)
+                {
+            %>
             <div class="detail-img-container-mini">
-                <img ID="ImagenMini1" class="detail-img" src="<%: articulo.Imagen %>" alt="producto"/>
+                <img id="ImagenMini<%:imagen.Id %>" class="detail-img" src="<%:imagen.ImagenUrl %>" alt="producto" />
             </div>
-            <div class="detail-img-container-mini">
-                <asp:Image ID="ImagenMini2" class="detail-img" src="https://http2.mlstatic.com/D_NQ_NP_796892-MLA46114829828_052021-O.webp" alt="producto" runat="server" />
-            </div>
-            <div class="detail-img-container-mini">
-                <asp:Image ID="ImagenMini3" class="detail-img" src="https://http2.mlstatic.com/D_NQ_NP_796892-MLA46114829828_052021-O.webp" alt="producto" runat="server" />
-            </div>
+            <%
+                }
+            %>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 text-center">
             <div class="detail-img-container">
-                <img ID="ImagenDetalle" class="detail-img" src="<%: articulo.Imagen %>" alt="producto"/>
+                <img id="ImagenDetalle" class="detail-img" src="<%:listaImagenes[0].ImagenUrl %>" alt="producto" />
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-1">
