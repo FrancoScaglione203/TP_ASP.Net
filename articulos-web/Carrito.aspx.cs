@@ -14,43 +14,18 @@ namespace articulos_web
     {
         public void Page_Load(object sender, EventArgs e)
         {
-
+            cargarRepetidor();
         }
 
-        public void AgregarCarrito(int Id) 
+        public void cargarRepetidor() 
         {
             List<Articulo> carrito = new List<Articulo>();
             carrito = Session["Carrito"] as List<Articulo>;
-
-            int id = Convert.ToInt32(Session["Id"]);
-            Articulo articuloNuevo = new Articulo();
-            articuloNuevo = seleccionArticulo(id);
-
-            carrito.Add(articuloNuevo);
-
-            Session["Carrito"] = carrito;
-
-
-            repRepetidor.DataSource = Session["Carrito"] as List<Articulo>;
+            repRepetidor.DataSource = carrito;
             repRepetidor.DataBind();
-
         }
 
 
-        public Articulo seleccionArticulo (int id)
-        {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaArticulos = negocio.listarConSp();
-        
-            foreach (var art in listaArticulos)
-            {
-                if (art.Id == id)
-                {
-                    return art;
-                }
-            }
-            return null;
-        }
 
 
 
