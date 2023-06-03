@@ -30,16 +30,53 @@ namespace articulos_web
 
 
 
-        public void EliminarCarrito_Click(object sender, EventArgs e)
+       // public void EliminarCarrito_Click(object sender, EventArgs e)
+       // {
+       //     Button btnEliminar = (Button)sender;
+       //     int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
+       //     this.EliminarCarrito(idEliminar);
+       //     //Response.Redirect("carrito.aspx");
+       // }
+
+
+        public void EliminarCarrito(int id)
+        {
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = Session["Carrito"] as List<Articulo>;
+            //int id = Convert.ToInt32(Session["Id"]);
+            Articulo articuloEliminar = new Articulo();
+            articuloEliminar = seleccionArticulo(id);
+            carrito.Remove(articuloEliminar);
+            Session["Carrito"] = carrito;
+        }
+
+
+        public Articulo seleccionArticulo(int id)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> listaArticulos = negocio.listarConSp();
+
+            foreach (var art in listaArticulos)
+            {
+                if (art.Id == id)
+                {
+                    return art;
+                }
+            }
+            return null;
+        }
+
+        protected void EliminarCarrito_Click(object sender, EventArgs e)
         {
 
+        }
 
-
-
-
-            //int idEliminar = int.Parse(((Button)sender).CommandArgument);
-            //artsCarrito.RemoveAll(articulo => articulo.Id == idEliminar);
-
+        protected void DeleteCart_Click(object sender, EventArgs e)
+        {
+            Button btnEliminar = (Button)sender;
+            int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
+            this.EliminarCarrito(idEliminar);
+            Response.Redirect("carrito.aspx");
         }
     }
 }
