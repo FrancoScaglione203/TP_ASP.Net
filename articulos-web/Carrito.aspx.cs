@@ -29,20 +29,8 @@ namespace articulos_web
             carrito = Session["Carrito"] as List<Articulo>;
             repRepetidor.DataSource = carrito;
             repRepetidor.DataBind();
+            SumaTotal();
         }
-
-
-
-
-
-
-       // public void EliminarCarrito_Click(object sender, EventArgs e)
-       // {
-       //     Button btnEliminar = (Button)sender;
-       //     int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
-       //     this.EliminarCarrito(idEliminar);
-       //     //Response.Redirect("carrito.aspx");
-       // }
 
 
         public void EliminarCarrito(int id)
@@ -73,13 +61,44 @@ namespace articulos_web
         }
 
 
+        public void SumaTotal()
+        {
+            if (Session["SumTotal"] == null)
+            {
+                Session["SumTotal"] = 0; 
+            }
 
-public void EliminarCarrito_Click(object sender, EventArgs e)
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = Session["Carrito"] as List<Articulo>;
+            decimal total = 0;
+            foreach (var art in carrito) 
+            {
+                total += art.Precio;
+            }
+
+            Session["SumTotal"] = total;
+
+
+            lblTotal.Text = (Session["SumTotal"].ToString());
+
+        }
+
+        protected void btnEliminarCarrito_Click(object sender, EventArgs e)
         {
             Button btnEliminar = (Button)sender;
             int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
             this.EliminarCarrito(idEliminar);
             Response.Redirect("carrito.aspx");
         }
+
+
+
+        // public void EliminarCarrito_Click(object sender, EventArgs e)
+        // {
+        //     Button btnEliminar = (Button)sender;
+        //     int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
+        //     this.EliminarCarrito(idEliminar);
+        //     //Response.Redirect("carrito.aspx");
+        // }
     }
 }

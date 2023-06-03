@@ -21,14 +21,23 @@
                                     <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                     <p class="card-text"><%#Eval("Descripcion") %></p>
                                     <p class="card-text"><small class="text-body-secondary">$<%#Eval("Precio") %></small></p>
-                                    <asp:Button Text="Eliminar" cssClass="btn btn-primary w-25" runat="server" ID="EliminarCarrito" OnClick="EliminarCarrito_Click" />
+                                    <asp:Button  Text="Eliminar" AutoPostBack="true" cssClass="btn btn-primary w-25" runat="server" ID="btnEliminarCarrito" OnClick="btnEliminarCarrito_Click" Enabled="True"  />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+
+            <div class="col-md-4" Cssclass="align-middle text-end">
+                <h2 Cssclass="align-middle text-end" >TOTAL</h2>
+                <asp:Label runat="server" ID="lblTotal" CssClass="align-middle text-end"></asp:Label>
+            </div>
         </ContentTemplate>
+
     </asp:UpdatePanel>
+
+
+
 
 </asp:Content>

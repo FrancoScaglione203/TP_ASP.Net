@@ -147,3 +147,15 @@ footer .fa:hover {
         font-size: 0.8rem !important;
     }
 }
+
+.text-end {
+    text-align: end;
+}
+
+.align-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+

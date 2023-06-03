@@ -45,7 +45,7 @@
                     <div class="navbar-nav ms-lg-4">
                             <a class="nav-item nav-link" href="Carrito.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
                             <asp:Label ID="lblCantidad" runat="server" CssClass="fa-solid px-1 nav-item nav-link"/>
-                        <a class="nav-item nav-link" href="Usuario.aspx">
+                            <a class="nav-item nav-link" href="Usuario.aspx">
                             <asp:Label ID="lblLogueo" runat="server" CssClass="fa-solid fa-user px-1"></asp:Label></a>
                     </div>
                 </div>
