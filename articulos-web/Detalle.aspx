@@ -28,9 +28,8 @@
                 <h5 class="texto-azul">Marca:</h5>
                 <p><%: articulo.Marca %></p>
                 <h5 class="texto-azul">Descripción:</h5>
-                <p><%: articulo.Descripcion %></p>
-
-                <a class="btn btn-primary w-100" href="Carrito.aspx" >Añadir al carrito</a>
+                <p><%: articulo.Descripcion %></p> 
+                <asp:Button class="btn btn-primary w-100" ID="AddCart" runat="server" Text="Añadir al carrito" OnClick="AddCart_Click" />
             </div>
         </div>
         <div>

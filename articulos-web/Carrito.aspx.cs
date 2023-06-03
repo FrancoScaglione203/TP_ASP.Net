@@ -4,14 +4,79 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using negocio;
+using dominio;
+using System.Collections;
 
 namespace articulos_web
 {
     public partial class Carrito : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
+        {
+            cargarRepetidor();
+        }
+
+        public void cargarRepetidor() 
+        {
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = Session["Carrito"] as List<Articulo>;
+            repRepetidor.DataSource = carrito;
+            repRepetidor.DataBind();
+        }
+
+
+
+
+
+
+       // public void EliminarCarrito_Click(object sender, EventArgs e)
+       // {
+       //     Button btnEliminar = (Button)sender;
+       //     int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
+       //     this.EliminarCarrito(idEliminar);
+       //     //Response.Redirect("carrito.aspx");
+       // }
+
+
+        public void EliminarCarrito(int id)
+        {
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = Session["Carrito"] as List<Articulo>;
+            //int id = Convert.ToInt32(Session["Id"]);
+            Articulo articuloEliminar = new Articulo();
+            articuloEliminar = seleccionArticulo(id);
+            carrito.Remove(articuloEliminar);
+            Session["Carrito"] = carrito;
+        }
+
+
+        public Articulo seleccionArticulo(int id)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> listaArticulos = negocio.listarConSp();
+
+            foreach (var art in listaArticulos)
+            {
+                if (art.Id == id)
+                {
+                    return art;
+                }
+            }
+            return null;
+        }
+
+        protected void EliminarCarrito_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void DeleteCart_Click(object sender, EventArgs e)
+        {
+            Button btnEliminar = (Button)sender;
+            int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);
+            this.EliminarCarrito(idEliminar);
+            Response.Redirect("carrito.aspx");
         }
     }
 }
