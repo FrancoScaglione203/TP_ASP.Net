@@ -44,6 +44,11 @@ namespace articulos_web
 
         protected void AddCart_Click(object sender, EventArgs e)
         {
+            if (Session["Nombre"] == null)
+            {
+                Response.Redirect("Usuario.aspx");
+                return;
+            }
             int Id = Convert.ToInt32(Session["Id"]);
             if (Session["Carrito"] == null)
             {

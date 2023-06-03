@@ -19,6 +19,12 @@ namespace articulos_web
 
         public void cargarRepetidor() 
         {
+            if (Session["Nombre"] == null) 
+            {
+                Response.Redirect("Usuario.aspx");
+                return;
+            }
+
             List<Articulo> carrito = new List<Articulo>();
             carrito = Session["Carrito"] as List<Articulo>;
             repRepetidor.DataSource = carrito;
@@ -66,12 +72,9 @@ namespace articulos_web
             return null;
         }
 
-        protected void EliminarCarrito_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        protected void DeleteCart_Click(object sender, EventArgs e)
+public void EliminarCarrito_Click(object sender, EventArgs e)
         {
             Button btnEliminar = (Button)sender;
             int idEliminar = Convert.ToInt32(btnEliminar.CommandArgument);

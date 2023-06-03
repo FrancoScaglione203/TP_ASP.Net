@@ -64,7 +64,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Locales.aspx" />
+    <Content Include="Locales.aspx">
+      <BrowseToURL>/Locales.aspx</BrowseToURL>
+    </Content>
     <Content Include="Carrito.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Detalle.aspx" />

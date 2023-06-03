@@ -18,8 +18,7 @@
             <div class="mb-3">
                 <label for="txtClave" class="form-label">Clave</label>
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
-            </div>
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>   
             <asp:Button Text="Ingresar" CssClass="btn btn-primary" runat="server" ID="btnLogin" OnClick="btnLogin_Click" AutoPostBack="false" />
         </div>
         <div class="col-4"></div>
