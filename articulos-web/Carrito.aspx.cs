@@ -83,7 +83,7 @@ namespace articulos_web
                 Session["SumTotal"] = total;
 
                 if(lblTotal != null)
-                    lblTotal.Text = (Session["SumTotal"].ToString());
+                    lblTotal.Text = "$" + (Session["SumTotal"].ToString());
             }
 
             

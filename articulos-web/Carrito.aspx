@@ -31,10 +31,10 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <div class="col-md-4" Cssclass="align-middle text-end">
-                <h2 Cssclass="align-middle text-end" >TOTAL</h2>
-                <asp:Label runat="server" ID="lblTotal" CssClass="align-middle text-end"></asp:Label>
-            </div>
+           <div class="col-md-4 align-middle text-end">
+            <h2 class="align-middle" Font-Size="30" >TOTAL: </h2>
+            <asp:Label runat="server" ID="lblTotal" CssClass="align-middle" style="font-size: 30px;" ></asp:Label>
+        </div>
         </ContentTemplate>
 
 

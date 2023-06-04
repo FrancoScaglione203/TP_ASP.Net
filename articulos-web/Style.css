@@ -159,3 +159,13 @@ footer .fa:hover {
     height: 100%;
 }
 
+.lbl-total {
+    display: flex;
+    align-items: center;
+}
+
+.label-container {
+    position: relative; /* Establece la posición relativa */
+    top: 10px; /* Ajusta el valor según tu preferencia */
+    left: 10px; /* Ajusta el valor según tu preferencia */
+}
