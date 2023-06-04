@@ -48,7 +48,7 @@ namespace articulos_web
         public Articulo seleccionArticulo(int id)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            List<Articulo> listaArticulos = negocio.listarConSp();
+            List<Articulo> listaArticulos = negocio.listar();
 
             foreach (var art in listaArticulos)
             {

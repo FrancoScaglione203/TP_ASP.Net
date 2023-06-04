@@ -18,10 +18,10 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                //string consulta = "Select Articulos.Id,Articulos.Codigo,Articulos.Nombre,Articulos.Descripcion,Articulos.Precio,Marcas.Descripcion as Marca,Categorias.Descripcion as Categoria,Imagenes.ImagenUrl,Articulos.IdMarca,Articulos.IdCategoria From Articulos\r\ninner join Marcas on Marcas.Id = Articulos.IdMarca\r\ninner join Categorias on Categorias.Id = Articulos.IdCategoria\r\ninner join Imagenes on Imagenes.IdArticulo = Articulos.Id Where Articulos.idMarca > 0";
-                //datos.setearConsulta(consulta);
+                string consulta = "Select Articulos.Id,Articulos.Codigo,Articulos.Nombre,Articulos.Descripcion,Articulos.Precio,Marcas.Descripcion as Marca,Categorias.Descripcion as Categoria,Imagenes.ImagenUrl,Articulos.IdMarca,Articulos.IdCategoria From Articulos\r\ninner join Marcas on Marcas.Id = Articulos.IdMarca\r\ninner join Categorias on Categorias.Id = Articulos.IdCategoria\r\ninner join Imagenes on Imagenes.IdArticulo = Articulos.Id Where Articulos.idMarca > 0";
+                datos.setearConsulta(consulta);
 
-                datos.setearProcedimiento("SP_Listar");
+                //datos.setearProcedimiento("SP_Listar");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -51,7 +51,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw ;
             }
         
     }
@@ -109,7 +109,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -147,7 +147,7 @@ namespace negocio
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -176,7 +176,7 @@ namespace negocio
             }   
             catch (Exception ex)
             {   
-                throw;
+                throw ex;
             }
             finally
             {

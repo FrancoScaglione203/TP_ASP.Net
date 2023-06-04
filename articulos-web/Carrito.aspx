@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="articulos_web.Carrito" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Carrito.aspx.cs" Inherits="articulos_web.Carrito" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,7 +6,7 @@
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-    <asp:UpdatePanel runat="server">
+
         <ContentTemplate runat="server">
 
             <asp:Repeater runat="server" ID="repRepetidor">
@@ -21,9 +21,11 @@
                                     <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                     <p class="card-text"><%#Eval("Descripcion") %></p>
                                     <p class="card-text"><small class="text-body-secondary">$<%#Eval("Precio") %></small></p>
-                                    <asp:Button  Text="Eliminar" AutoPostBack="true" cssClass="btn btn-primary w-25" runat="server" ID="btnEliminarCarrito" OnClick="btnEliminarCarrito_Click" Enabled="True"  />
+                                    <asp:Button  Text="Eliminar" AutoPostBack="true" cssClass="btn btn-primary w-25" runat="server" ID="btnEliminarCarrito" OnClick="btnEliminarCarrito_Click" Enabled="True" CommandName="Eliminar" CommandArgument='<%# Eval("Id") %>'  />
+
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </ItemTemplate>
@@ -35,7 +37,7 @@
             </div>
         </ContentTemplate>
 
-    </asp:UpdatePanel>
+
 
 
 
