@@ -46,7 +46,7 @@
                             <div class="col-md-4">
                                 <div class="card">
                                     <a href="Detalle.aspx?id=<%: articulo.Id %>">
-                                        <img class="card-img-top" src="<%:articulo.Imagen.ImagenUrl %>" alt="<%: articulo.Nombre %>"></a>
+                                        <img class="card-img-top" src="<%:articulo.Imagen.ImagenUrl %>" alt="<%: articulo.Nombre %>" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr3lojbtBPci4ZIOczT8VHnHr6X4Wj2zPUSrmMCRyCuGlEOYX3D-S7PiT07ImUMLuIm2M&usqp=CAU'"></a>
                                     <div class="card-body">
                                         <h5 class="card-title"><%: articulo.Marca.Descripcion %></h5>
                                         <h5 class="card-title"><%: articulo.Nombre %></h5>

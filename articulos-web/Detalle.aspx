@@ -10,7 +10,7 @@
                 {
             %>
             <div class="detail-img-container-mini">
-                <img id="ImagenMini<%:imagen.Id %>" class="detail-img" src="<%:imagen.ImagenUrl %>" alt="producto" />
+                <img id="ImagenMini<%:imagen.Id %>" class="detail-img" src="<%:imagen.ImagenUrl %>" alt="producto"  />
             </div>
             <%
                 }
@@ -18,7 +18,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 text-center">
             <div class="detail-img-container">
-                <img id="ImagenDetalle" class="detail-img" src="<%:listaImagenes[0].ImagenUrl %>" alt="producto" />
+                <img id="ImagenDetalle" class="detail-img" src="<%:listaImagenes[0].ImagenUrl %>" alt="producto" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr3lojbtBPci4ZIOczT8VHnHr6X4Wj2zPUSrmMCRyCuGlEOYX3D-S7PiT07ImUMLuIm2M&usqp=CAU'" />
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-1">
