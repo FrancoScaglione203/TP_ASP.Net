@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-lg-auto">
                         <a class="nav-item nav-link" href="Default.aspx" aria-current="page">Home</a>
-                        <a class="nav-item nav-link" href="Locales.aspx">Locales</a>
+                        <a class="nav-item nav-link" href="Locales.aspx" aria-current="page">Locales</a>
                         <a class="nav-item nav-link" href="#">Nosotros</a>
                     </div>
                     <div class="navbar-nav ms-lg-4">

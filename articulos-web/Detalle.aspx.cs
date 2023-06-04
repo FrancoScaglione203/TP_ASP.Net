@@ -46,7 +46,7 @@ namespace articulos_web
         {
             if (Session["Nombre"] == null)
             {
-                Response.Redirect("Usuario.aspx");
+                Response.Redirect("Carrito.aspx");
                 return;
             }
             int Id = Convert.ToInt32(Session["Id"]);
@@ -62,7 +62,7 @@ namespace articulos_web
                 AgregarCarrito(Id);
             }
 
-            Response.Redirect("default.aspx");
+            Response.Redirect("Carrito.aspx");
         }
 
         public void AgregarCarrito(int Id)
